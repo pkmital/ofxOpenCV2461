@@ -32,6 +32,7 @@
 		89FF05C717D2591A0086CCFD /* ofxCvImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89FF05AA17D2591A0086CCFD /* ofxCvImage.cpp */; };
 		89FF05C817D2591A0086CCFD /* ofxCvShortImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89FF05AD17D2591A0086CCFD /* ofxCvShortImage.cpp */; };
 		89FF05CA17D25A830086CCFD /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 89FF05C917D25A830086CCFD /* libz.dylib */; };
+		89FF05DD17D268A30086CCFD /* OpenCL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89FF05DC17D268A30086CCFD /* OpenCL.framework */; };
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9710E8CC7DD009D7055 /* AGL.framework */; };
@@ -248,6 +249,9 @@
 		89FF05AE17D2591A0086CCFD /* ofxCvShortImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxCvShortImage.h; sourceTree = "<group>"; };
 		89FF05AF17D2591A0086CCFD /* ofxOpenCv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxOpenCv.h; sourceTree = "<group>"; };
 		89FF05C917D25A830086CCFD /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		89FF05DA17D2688E0086CCFD /* matrix_operations.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = matrix_operations.hpp; sourceTree = "<group>"; };
+		89FF05DB17D2688E0086CCFD /* ocl.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ocl.hpp; sourceTree = "<group>"; };
+		89FF05DC17D268A30086CCFD /* OpenCL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenCL.framework; path = System/Library/Frameworks/OpenCL.framework; sourceTree = SDKROOT; };
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E45BE9710E8CC7DD009D7055 /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = /System/Library/Frameworks/AGL.framework; sourceTree = "<absolute>"; };
@@ -279,6 +283,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89FF05DD17D268A30086CCFD /* OpenCL.framework in Frameworks */,
 				89FF05CA17D25A830086CCFD /* libz.dylib in Frameworks */,
 				E7F985F815E0DEA3003869B5 /* Accelerate.framework in Frameworks */,
 				E7E077E815D3B6510020DFD4 /* QTKit.framework in Frameworks */,
@@ -378,6 +383,7 @@
 		89FF050217D2591A0086CCFD /* opencv2 */ = {
 			isa = PBXGroup;
 			children = (
+				89FF05D917D2688E0086CCFD /* ocl */,
 				89FF050317D2591A0086CCFD /* calib3d */,
 				89FF050517D2591A0086CCFD /* contrib */,
 				89FF050B17D2591A0086CCFD /* core */,
@@ -714,6 +720,15 @@
 			path = src;
 			sourceTree = "<group>";
 		};
+		89FF05D917D2688E0086CCFD /* ocl */ = {
+			isa = PBXGroup;
+			children = (
+				89FF05DA17D2688E0086CCFD /* matrix_operations.hpp */,
+				89FF05DB17D2688E0086CCFD /* ocl.hpp */,
+			);
+			path = ocl;
+			sourceTree = "<group>";
+		};
 		BB4B014C10F69532006C3DED /* addons */ = {
 			isa = PBXGroup;
 			children = (
@@ -772,6 +787,7 @@
 		E4B69B4A0A3A1720003C02F2 = {
 			isa = PBXGroup;
 			children = (
+				89FF05DC17D268A30086CCFD /* OpenCL.framework */,
 				89FF05C917D25A830086CCFD /* libz.dylib */,
 				E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */,
 				E4EB6923138AFD0F00A09F29 /* Project.xcconfig */,

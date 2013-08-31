@@ -31,6 +31,7 @@ void testApp::update(){
         
         flow->calc(I0, I1, flowImg);
         
+        // convert to color, thanks to: http://stackoverflow.com/questions/7693561/opencv-displaying-a-2-channel-image-optical-flow
         //extraxt x and y channels
         Mat xy[2]; //X,Y
         split(flowImg, xy);
@@ -54,7 +55,7 @@ void testApp::update(){
         //convert to BGR and show
         Mat rgb, rgb8, ofxrgb(flowColorImg.getCvImage());
         cvtColor(hsv, rgb, COLOR_HSV2RGB);
-        cv::imshow("flow", rgb);     // this expects BGR but who cares?
+        //cv::imshow("flow", rgb);     // this expects BGR but who cares?
         
         rgb = rgb * 255.0;
         rgb.convertTo(ofxrgb, CV_8U);
